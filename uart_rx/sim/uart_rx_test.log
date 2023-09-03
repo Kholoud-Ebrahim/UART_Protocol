@@ -1,0 +1,59 @@
+Start time: 17:40:42 on Aug 21,2023
+vlog -writetoplevels questa.tops -timescale 1ns/1ns design.sv testbench.sv 
+-- Compiling module data_sampling
+-- Compiling module deserializer
+-- Compiling module edge_bit_counter
+-- Compiling module parity_check
+-- Compiling module rx_fsm
+-- Compiling module start_check
+-- Compiling module stop_check
+-- Compiling module uart_rx
+-- Compiling interface uart_rx_intf
+-- Compiling module uart_rx_top
+
+Top level modules:
+	uart_rx_top
+End time: 17:40:42 on Aug 21,2023, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+# vsim uart_rx_top -batch -do "vsim -voptargs=+acc=npr; run -all; exit" -voptargs="+acc=npr" 
+# Start time: 17:40:42 on Aug 21,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim-64
+# //  Version 2021.3 linux_x86_64 Jul 13 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Warning: License feature 'msimhdlsim' will expire in 10 days.
+# Loading sv_std.std
+# Loading work.uart_rx_top(fast)
+# Loading work.uart_rx_intf(fast__1)
+# Loading work.uart_rx(fast)
+# Loading work.data_sampling(fast)
+# Loading work.deserializer(fast)
+# Loading work.edge_bit_counter(fast)
+# Loading work.rx_fsm(fast)
+# Loading work.start_check(fast)
+# Loading work.parity_check(fast)
+# Loading work.stop_check(fast)
+# 
+# vsim -voptargs=+acc=npr
+# run -all
+# @  4700: PASS NO Partity Bit Check, The valid data = 1
+# -----------------------------------------------------
+# @  9650: PASS Even Partity Check, The valid data = 1
+# -----------------------------------------------------
+# @ 14600: PASS Odd Partity Check, The valid data = 1
+# -----------------------------------------------------
+# ** Note: $finish    : testbench.sv(131)
+#    Time: 1500 ns  Iteration: 1  Instance: /uart_rx_top
+# End time: 17:40:43 on Aug 21,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
