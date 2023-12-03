@@ -1,0 +1,49 @@
+Coverage Report Summary Data by file
+
+File: E:/UVM/UART_Protocol/uart_tx/rtl/mux.v
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                        8         7         1      87.5
+    Branches                     8         7         1      87.5
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+
+File: E:/UVM/UART_Protocol/uart_tx/rtl/parity_calc.v
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                        6         6         0     100.0
+    Branches                     5         5         0     100.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         6         6         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+
+File: E:/UVM/UART_Protocol/uart_tx/rtl/serializer.v
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       12        12         0     100.0
+    Branches                     5         5         0     100.0
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       0         0         0     100.0
+    Transitions                  0         0         0     100.0
+
+File: E:/UVM/UART_Protocol/uart_tx/rtl/tx_fsm.v
+    Enabled Coverage        Active      Hits    Misses % Covered
+    ----------------        ------      ----    ------ ---------
+    Stmts                       34        30         4      88.2
+    Branches                    14        13         1      92.8
+    FEC Condition Terms          0         0         0     100.0
+    FEC Expression Terms         0         0         0     100.0
+    States                       5         5         0     100.0
+    Transitions                 11         8         3      72.7
+
+
+TOTAL COVERGROUP COVERAGE: 100.0%  COVERGROUP TYPES: 1
+
+
+NEVER FAILED: 100.0%  ASSERTIONS: 23
+
+
