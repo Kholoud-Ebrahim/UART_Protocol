@@ -11,3 +11,6 @@ CPU) into serial form and transmit in serial to receiving UART.
 
 ## UART Receiver Block Diagram
 ![image](https://github.com/UserImages/user_images/blob/main/uart_rx.PNG)
+
+## UART Block Diagram
+![image](https://github.com/UserImages/user_images/blob/main/uart.PNG)
