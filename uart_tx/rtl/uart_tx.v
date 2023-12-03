@@ -1,3 +1,10 @@
+/*###################################################################*\
+##              Module Name:  uart_tx                                ##
+##              Project Name: uart_protocl                           ##
+##              Date:   3/12/2023                                    ##
+##              Author: Kholoud Ebrahim Darwseh                      ##
+\*###################################################################*/
+
 module uart_tx #(parameter DWIDTH = 8)(clk, rst, p_data, data_valid, parity_en, parity_type, s_data, busy);
     input [DWIDTH-1:0]p_data;
     input data_valid, parity_en, parity_type;
