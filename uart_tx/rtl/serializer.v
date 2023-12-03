@@ -1,3 +1,10 @@
+/*###################################################################*\
+##              Module Name:  serializer                             ##
+##              Project Name: uart_protocl                           ##
+##              Date:   28/11/2023                                   ##
+##              Author: Kholoud Ebrahim Darwseh                      ##
+\*###################################################################*/
+
 module serializer #(parameter DWIDTH =8)(clk, rst, p_data, ser_en, s_data, ser_done);
     input clk, rst;
     input [DWIDTH-1:0]p_data;
