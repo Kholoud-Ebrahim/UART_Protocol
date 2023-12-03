@@ -1,0 +1,1883 @@
+# vsim +UVM_TESTNAME=uart_test -assertdebug -coverage -fsmdebug -c -debugDB top_opt 
+# Loading sv_std.std
+# Loading work.param_pkg
+# Loading mtiUvm.uvm_pkg
+# Loading work.rx_pkg
+# Loading work.tx_pkg
+# Loading work.uart_pkg
+# Loading work.uart_top_sv_unit
+# Loading work.uart_top(fast)
+# Loading work.tx_intf(fast)
+# Loading work.rx_intf(fast)
+# Loading work.uart(fast)
+# Loading work.uart_tx(fast)
+# Loading work.parity_calc(fast)
+# Loading work.serializer(fast)
+# Loading work.tx_fsm(fast)
+# Loading work.mux(fast)
+# Loading work.uart_rx(fast)
+# Loading work.data_sampling(fast)
+# Loading work.deserializer(fast)
+# Loading work.edge_bit_counter(fast)
+# Loading work.rx_fsm(fast)
+# Loading work.start_check(fast)
+# Loading work.parity_check(fast)
+# Loading work.stop_check(fast)
+# ** Warning: (vsim-3015) E:/UVM/UART_Protocol/uart/rtl/uart.v(40): [PCDPC] - Port size (6 or 6) does not match connection size (32) for port 'prescale'. The port definition is at: E:/UVM/UART_Protocol/uart_rx/rtl/uart_rx.v(9).
+#         Region: /uart_top/dut/rx
+# Loading D:\questasim_10.0b\uvm-1.0p1\win32\uvm_dpi.dll
+# 1
+# ----------------------------------------------------------------
+# UVM-1.0p1 
+# (C) 2007-2011 Mentor Graphics Corporation
+# (C) 2007-2011 Cadence Design Systems, Inc.
+# (C) 2006-2011 Synopsys, Inc.
+# ----------------------------------------------------------------
+# UVM_INFO @ 0: reporter [RNTST] Running test uart_test...
+# UVM_INFO @ 0 ns: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               uart_test               -     @468 
+#   env                      uart_env                -     @477 
+#     rx_agnt                rx_agent                -     @511 
+#       rx_mon               uvm_monitor             -     @563 
+#         rx_mon_port        uvm_analysis_port       -     @570 
+#       rx_mon2agnt_port     uvm_analysis_port       -     @518 
+#     scb                    uart_scoreboard         -     @526 
+#       rx_scb_imp           uvm_analysis_imp_rx     -     @541 
+#       tx_scb_imp           uvm_analysis_imp_tx     -     @533 
+#     tx_agnt                tx_agent                -     @496 
+#       tx_drv               tx_driver               -     @693 
+#         rsp_port           uvm_analysis_port       -     @708 
+#         sqr_pull_port      uvm_seq_item_pull_port  -     @700 
+#       tx_mon               uvm_monitor             -     @716 
+#         tx_mon_port        uvm_analysis_port       -     @723 
+#       tx_mon2agnt_port     uvm_analysis_port       -     @503 
+#       tx_sqr               tx_sequencer            -     @584 
+#         rsp_export         uvm_analysis_export     -     @591 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @685 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+# --------------------------------------------------------------
+# 
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @772      
+#   p_data_tx                integral                8     'b10111111
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @781      
+#   p_data_rx                integral                8     'b10111111
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 1245 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 1245 ns: tx_in=10111111   rx_out=10111111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @785      
+#   p_data_tx                integral                8     'b1100101 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @789      
+#   p_data_rx                integral                8     'b1100101 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 2285 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 2285 ns: tx_in=1100101   rx_out=1100101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @797      
+#   p_data_tx                integral                8     'b1001010 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @805      
+#   p_data_rx                integral                8     'b1001010 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 3405 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 3405 ns: tx_in=1001010   rx_out=1001010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @809      
+#   p_data_tx                integral                8     'b10110100
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @813      
+#   p_data_rx                integral                8     'b10110100
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 4445 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 4445 ns: tx_in=10110100   rx_out=10110100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @821      
+#   p_data_tx                integral                8     'b11000000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @829      
+#   p_data_rx                integral                8     'b11000000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 5565 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 5565 ns: tx_in=11000000   rx_out=11000000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @833      
+#   p_data_tx                integral                8     'b10110011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @837      
+#   p_data_rx                integral                8     'b10110011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 6605 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 6605 ns: tx_in=10110011   rx_out=10110011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @845      
+#   p_data_tx                integral                8     'b10101000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @853      
+#   p_data_rx                integral                8     'b10101000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 7725 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 7725 ns: tx_in=10101000   rx_out=10101000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @857      
+#   p_data_tx                integral                8     'b1101010 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @865      
+#   p_data_rx                integral                8     'b1101010 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 8765 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 8765 ns: tx_in=1101010   rx_out=1101010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @869      
+#   p_data_tx                integral                8     'b10110010
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @877      
+#   p_data_rx                integral                8     'b10110010
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 9805 ns: uvm_test_top.env.scb [COMPARE_PASSED] @ 9805 ns: tx_in=10110010   rx_out=10110010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @881      
+#   p_data_tx                integral                8     'b1001000 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @889      
+#   p_data_rx                integral                8     'b1001000 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 10845 ns: uvm_test_top.env.scb [COMPARE_PASSED] @10845 ns: tx_in=1001000   rx_out=1001000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @893      
+#   p_data_tx                integral                8     'b10111   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @897      
+#   p_data_rx                integral                8     'b10111   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 11885 ns: uvm_test_top.env.scb [COMPARE_PASSED] @11885 ns: tx_in=10111   rx_out=10111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @905      
+#   p_data_tx                integral                8     'b11001010
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @913      
+#   p_data_rx                integral                8     'b11001010
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 13005 ns: uvm_test_top.env.scb [COMPARE_PASSED] @13005 ns: tx_in=11001010   rx_out=11001010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @917      
+#   p_data_tx                integral                8     'b11100001
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @925      
+#   p_data_rx                integral                8     'b11100001
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 14045 ns: uvm_test_top.env.scb [COMPARE_PASSED] @14045 ns: tx_in=11100001   rx_out=11100001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @929      
+#   p_data_tx                integral                8     'b10101011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @937      
+#   p_data_rx                integral                8     'b10101011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 15085 ns: uvm_test_top.env.scb [COMPARE_PASSED] @15085 ns: tx_in=10101011   rx_out=10101011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @941      
+#   p_data_tx                integral                8     'b11110001
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @945      
+#   p_data_rx                integral                8     'b11110001
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 16125 ns: uvm_test_top.env.scb [COMPARE_PASSED] @16125 ns: tx_in=11110001   rx_out=11110001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @953      
+#   p_data_tx                integral                8     'b1011001 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @957      
+#   p_data_rx                integral                8     'b1011001 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 17245 ns: uvm_test_top.env.scb [COMPARE_PASSED] @17245 ns: tx_in=1011001   rx_out=1011001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @965      
+#   p_data_tx                integral                8     'b10101001
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @973      
+#   p_data_rx                integral                8     'b10101001
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 18365 ns: uvm_test_top.env.scb [COMPARE_PASSED] @18365 ns: tx_in=10101001   rx_out=10101001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @977      
+#   p_data_tx                integral                8     'b10010010
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @981      
+#   p_data_rx                integral                8     'b10010010
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 19405 ns: uvm_test_top.env.scb [COMPARE_PASSED] @19405 ns: tx_in=10010010   rx_out=10010010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @989      
+#   p_data_tx                integral                8     'b11100111
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @993      
+#   p_data_rx                integral                8     'b11100111
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 20525 ns: uvm_test_top.env.scb [COMPARE_PASSED] @20525 ns: tx_in=11100111   rx_out=11100111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1001     
+#   p_data_tx                integral                8     'b1100101 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1005     
+#   p_data_rx                integral                8     'b1100101 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 21645 ns: uvm_test_top.env.scb [COMPARE_PASSED] @21645 ns: tx_in=1100101   rx_out=1100101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1013     
+#   p_data_tx                integral                8     'b1111    
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1021     
+#   p_data_rx                integral                8     'b1111    
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 22765 ns: uvm_test_top.env.scb [COMPARE_PASSED] @22765 ns: tx_in=1111   rx_out=1111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1025     
+#   p_data_tx                integral                8     'b110     
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1033     
+#   p_data_rx                integral                8     'b110     
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 23805 ns: uvm_test_top.env.scb [COMPARE_PASSED] @23805 ns: tx_in=110   rx_out=110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1037     
+#   p_data_tx                integral                8     'b1010010 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1041     
+#   p_data_rx                integral                8     'b1010010 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 24845 ns: uvm_test_top.env.scb [COMPARE_PASSED] @24845 ns: tx_in=1010010   rx_out=1010010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1049     
+#   p_data_tx                integral                8     'b10110101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1053     
+#   p_data_rx                integral                8     'b10110101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 25965 ns: uvm_test_top.env.scb [COMPARE_PASSED] @25965 ns: tx_in=10110101   rx_out=10110101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1061     
+#   p_data_tx                integral                8     'b11010101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1065     
+#   p_data_rx                integral                8     'b11010101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 27085 ns: uvm_test_top.env.scb [COMPARE_PASSED] @27085 ns: tx_in=11010101   rx_out=11010101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1073     
+#   p_data_tx                integral                8     'b11001101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1077     
+#   p_data_rx                integral                8     'b11001101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 28205 ns: uvm_test_top.env.scb [COMPARE_PASSED] @28205 ns: tx_in=11001101   rx_out=11001101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1085     
+#   p_data_tx                integral                8     'b10101   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1093     
+#   p_data_rx                integral                8     'b10101   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 29325 ns: uvm_test_top.env.scb [COMPARE_PASSED] @29325 ns: tx_in=10101   rx_out=10101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1097     
+#   p_data_tx                integral                8     'b10010   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1105     
+#   p_data_rx                integral                8     'b10010   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 30365 ns: uvm_test_top.env.scb [COMPARE_PASSED] @30365 ns: tx_in=10010   rx_out=10010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1109     
+#   p_data_tx                integral                8     'b11100010
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1117     
+#   p_data_rx                integral                8     'b11100010
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 31405 ns: uvm_test_top.env.scb [COMPARE_PASSED] @31405 ns: tx_in=11100010   rx_out=11100010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1121     
+#   p_data_tx                integral                8     'b1011100 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1125     
+#   p_data_rx                integral                8     'b1011100 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 32445 ns: uvm_test_top.env.scb [COMPARE_PASSED] @32445 ns: tx_in=1011100   rx_out=1011100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1133     
+#   p_data_tx                integral                8     'b11100000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1141     
+#   p_data_rx                integral                8     'b11100000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 33565 ns: uvm_test_top.env.scb [COMPARE_PASSED] @33565 ns: tx_in=11100000   rx_out=11100000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1145     
+#   p_data_tx                integral                8     'b11111   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1149     
+#   p_data_rx                integral                8     'b11111   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 34605 ns: uvm_test_top.env.scb [COMPARE_PASSED] @34605 ns: tx_in=11111   rx_out=11111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1157     
+#   p_data_tx                integral                8     'b10000011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1165     
+#   p_data_rx                integral                8     'b10000011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 35725 ns: uvm_test_top.env.scb [COMPARE_PASSED] @35725 ns: tx_in=10000011   rx_out=10000011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1169     
+#   p_data_tx                integral                8     'b11101000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1177     
+#   p_data_rx                integral                8     'b11101000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 36765 ns: uvm_test_top.env.scb [COMPARE_PASSED] @36765 ns: tx_in=11101000   rx_out=11101000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1181     
+#   p_data_tx                integral                8     'b11001111
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1185     
+#   p_data_rx                integral                8     'b11001111
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 37805 ns: uvm_test_top.env.scb [COMPARE_PASSED] @37805 ns: tx_in=11001111   rx_out=11001111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1193     
+#   p_data_tx                integral                8     'b10110000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1201     
+#   p_data_rx                integral                8     'b10110000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 38925 ns: uvm_test_top.env.scb [COMPARE_PASSED] @38925 ns: tx_in=10110000   rx_out=10110000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1205     
+#   p_data_tx                integral                8     'b10001101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1213     
+#   p_data_rx                integral                8     'b10001101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 39965 ns: uvm_test_top.env.scb [COMPARE_PASSED] @39965 ns: tx_in=10001101   rx_out=10001101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1217     
+#   p_data_tx                integral                8     'b100111  
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1225     
+#   p_data_rx                integral                8     'b100111  
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 41005 ns: uvm_test_top.env.scb [COMPARE_PASSED] @41005 ns: tx_in=100111   rx_out=100111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1229     
+#   p_data_tx                integral                8     'b10010000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1237     
+#   p_data_rx                integral                8     'b10010000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 42045 ns: uvm_test_top.env.scb [COMPARE_PASSED] @42045 ns: tx_in=10010000   rx_out=10010000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1241     
+#   p_data_tx                integral                8     'b1001110 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1249     
+#   p_data_rx                integral                8     'b1001110 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 43085 ns: uvm_test_top.env.scb [COMPARE_PASSED] @43085 ns: tx_in=1001110   rx_out=1001110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1253     
+#   p_data_tx                integral                8     'b10011001
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1261     
+#   p_data_rx                integral                8     'b10011001
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 44125 ns: uvm_test_top.env.scb [COMPARE_PASSED] @44125 ns: tx_in=10011001   rx_out=10011001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1265     
+#   p_data_tx                integral                8     'b1010    
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1273     
+#   p_data_rx                integral                8     'b1010    
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 45165 ns: uvm_test_top.env.scb [COMPARE_PASSED] @45165 ns: tx_in=1010   rx_out=1010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1277     
+#   p_data_tx                integral                8     'b11110100
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1285     
+#   p_data_rx                integral                8     'b11110100
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 46205 ns: uvm_test_top.env.scb [COMPARE_PASSED] @46205 ns: tx_in=11110100   rx_out=11110100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1289     
+#   p_data_tx                integral                8     'b11011001
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1293     
+#   p_data_rx                integral                8     'b11011001
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 47245 ns: uvm_test_top.env.scb [COMPARE_PASSED] @47245 ns: tx_in=11011001   rx_out=11011001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1301     
+#   p_data_tx                integral                8     'b11010001
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1309     
+#   p_data_rx                integral                8     'b11010001
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 48365 ns: uvm_test_top.env.scb [COMPARE_PASSED] @48365 ns: tx_in=11010001   rx_out=11010001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1313     
+#   p_data_tx                integral                8     'b11001111
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1317     
+#   p_data_rx                integral                8     'b11001111
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 49405 ns: uvm_test_top.env.scb [COMPARE_PASSED] @49405 ns: tx_in=11001111   rx_out=11001111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1325     
+#   p_data_tx                integral                8     'b1111011 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1329     
+#   p_data_rx                integral                8     'b1111011 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 50525 ns: uvm_test_top.env.scb [COMPARE_PASSED] @50525 ns: tx_in=1111011   rx_out=1111011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1337     
+#   p_data_tx                integral                8     'b110100  
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1345     
+#   p_data_rx                integral                8     'b110100  
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 51645 ns: uvm_test_top.env.scb [COMPARE_PASSED] @51645 ns: tx_in=110100   rx_out=110100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1349     
+#   p_data_tx                integral                8     'b1010101 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1353     
+#   p_data_rx                integral                8     'b1010101 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 52685 ns: uvm_test_top.env.scb [COMPARE_PASSED] @52685 ns: tx_in=1010101   rx_out=1010101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1361     
+#   p_data_tx                integral                8     'b10101101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1365     
+#   p_data_rx                integral                8     'b10101101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 53805 ns: uvm_test_top.env.scb [COMPARE_PASSED] @53805 ns: tx_in=10101101   rx_out=10101101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1373     
+#   p_data_tx                integral                8     'b1010001 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1377     
+#   p_data_rx                integral                8     'b1010001 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 54925 ns: uvm_test_top.env.scb [COMPARE_PASSED] @54925 ns: tx_in=1010001   rx_out=1010001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1385     
+#   p_data_tx                integral                8     'b10001010
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1393     
+#   p_data_rx                integral                8     'b10001010
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 56045 ns: uvm_test_top.env.scb [COMPARE_PASSED] @56045 ns: tx_in=10001010   rx_out=10001010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1397     
+#   p_data_tx                integral                8     'b11001101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1405     
+#   p_data_rx                integral                8     'b11001101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 57085 ns: uvm_test_top.env.scb [COMPARE_PASSED] @57085 ns: tx_in=11001101   rx_out=11001101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1409     
+#   p_data_tx                integral                8     'b10100101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1417     
+#   p_data_rx                integral                8     'b10100101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 58125 ns: uvm_test_top.env.scb [COMPARE_PASSED] @58125 ns: tx_in=10100101   rx_out=10100101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1421     
+#   p_data_tx                integral                8     'b1001001 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1425     
+#   p_data_rx                integral                8     'b1001001 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 59165 ns: uvm_test_top.env.scb [COMPARE_PASSED] @59165 ns: tx_in=1001001   rx_out=1001001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1433     
+#   p_data_tx                integral                8     'b10111   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1437     
+#   p_data_rx                integral                8     'b10111   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 60285 ns: uvm_test_top.env.scb [COMPARE_PASSED] @60285 ns: tx_in=10111   rx_out=10111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1445     
+#   p_data_tx                integral                8     'b1101    
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1453     
+#   p_data_rx                integral                8     'b1101    
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 61405 ns: uvm_test_top.env.scb [COMPARE_PASSED] @61405 ns: tx_in=1101   rx_out=1101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1457     
+#   p_data_tx                integral                8     'b1111101 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1461     
+#   p_data_rx                integral                8     'b1111101 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 62445 ns: uvm_test_top.env.scb [COMPARE_PASSED] @62445 ns: tx_in=1111101   rx_out=1111101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1469     
+#   p_data_tx                integral                8     'b11001110
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1477     
+#   p_data_rx                integral                8     'b11001110
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 63565 ns: uvm_test_top.env.scb [COMPARE_PASSED] @63565 ns: tx_in=11001110   rx_out=11001110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1481     
+#   p_data_tx                integral                8     'b1000011 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1485     
+#   p_data_rx                integral                8     'b1000011 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 64605 ns: uvm_test_top.env.scb [COMPARE_PASSED] @64605 ns: tx_in=1000011   rx_out=1000011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1493     
+#   p_data_tx                integral                8     'b11010101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1497     
+#   p_data_rx                integral                8     'b11010101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 65725 ns: uvm_test_top.env.scb [COMPARE_PASSED] @65725 ns: tx_in=11010101   rx_out=11010101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1505     
+#   p_data_tx                integral                8     'b1001001 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1509     
+#   p_data_rx                integral                8     'b1001001 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 66845 ns: uvm_test_top.env.scb [COMPARE_PASSED] @66845 ns: tx_in=1001001   rx_out=1001001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1517     
+#   p_data_tx                integral                8     'b1011010 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1525     
+#   p_data_rx                integral                8     'b1011010 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 67965 ns: uvm_test_top.env.scb [COMPARE_PASSED] @67965 ns: tx_in=1011010   rx_out=1011010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1529     
+#   p_data_tx                integral                8     'b10100000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1533     
+#   p_data_rx                integral                8     'b10100000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 69005 ns: uvm_test_top.env.scb [COMPARE_PASSED] @69005 ns: tx_in=10100000   rx_out=10100000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1541     
+#   p_data_tx                integral                8     'b10001101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1545     
+#   p_data_rx                integral                8     'b10001101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 70125 ns: uvm_test_top.env.scb [COMPARE_PASSED] @70125 ns: tx_in=10001101   rx_out=10001101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1553     
+#   p_data_tx                integral                8     'b10111000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1557     
+#   p_data_rx                integral                8     'b10111000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 71245 ns: uvm_test_top.env.scb [COMPARE_PASSED] @71245 ns: tx_in=10111000   rx_out=10111000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1565     
+#   p_data_tx                integral                8     'b1101100 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1573     
+#   p_data_rx                integral                8     'b1101100 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 72365 ns: uvm_test_top.env.scb [COMPARE_PASSED] @72365 ns: tx_in=1101100   rx_out=1101100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1577     
+#   p_data_tx                integral                8     'b1000101 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1581     
+#   p_data_rx                integral                8     'b1000101 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 73405 ns: uvm_test_top.env.scb [COMPARE_PASSED] @73405 ns: tx_in=1000101   rx_out=1000101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1589     
+#   p_data_tx                integral                8     'b11100011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1593     
+#   p_data_rx                integral                8     'b11100011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 74525 ns: uvm_test_top.env.scb [COMPARE_PASSED] @74525 ns: tx_in=11100011   rx_out=11100011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1601     
+#   p_data_tx                integral                8     'b10111   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1609     
+#   p_data_rx                integral                8     'b10111   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 75645 ns: uvm_test_top.env.scb [COMPARE_PASSED] @75645 ns: tx_in=10111   rx_out=10111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1613     
+#   p_data_tx                integral                8     'b111110  
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1621     
+#   p_data_rx                integral                8     'b111110  
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 76685 ns: uvm_test_top.env.scb [COMPARE_PASSED] @76685 ns: tx_in=111110   rx_out=111110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1625     
+#   p_data_tx                integral                8     'b11000101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1633     
+#   p_data_rx                integral                8     'b11000101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 77725 ns: uvm_test_top.env.scb [COMPARE_PASSED] @77725 ns: tx_in=11000101   rx_out=11000101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1637     
+#   p_data_tx                integral                8     'b11011110
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1645     
+#   p_data_rx                integral                8     'b11011110
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 78765 ns: uvm_test_top.env.scb [COMPARE_PASSED] @78765 ns: tx_in=11011110   rx_out=11011110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1649     
+#   p_data_tx                integral                8     'b10101010
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1653     
+#   p_data_rx                integral                8     'b10101010
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 79805 ns: uvm_test_top.env.scb [COMPARE_PASSED] @79805 ns: tx_in=10101010   rx_out=10101010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1661     
+#   p_data_tx                integral                8     'b11001101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1665     
+#   p_data_rx                integral                8     'b11001101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 80925 ns: uvm_test_top.env.scb [COMPARE_PASSED] @80925 ns: tx_in=11001101   rx_out=11001101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1673     
+#   p_data_tx                integral                8     'b11000000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1677     
+#   p_data_rx                integral                8     'b11000000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 82045 ns: uvm_test_top.env.scb [COMPARE_PASSED] @82045 ns: tx_in=11000000   rx_out=11000000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1685     
+#   p_data_tx                integral                8     'b11110000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1693     
+#   p_data_rx                integral                8     'b11110000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 83165 ns: uvm_test_top.env.scb [COMPARE_PASSED] @83165 ns: tx_in=11110000   rx_out=11110000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1697     
+#   p_data_tx                integral                8     'b1101110 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1701     
+#   p_data_rx                integral                8     'b1101110 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 84205 ns: uvm_test_top.env.scb [COMPARE_PASSED] @84205 ns: tx_in=1101110   rx_out=1101110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1709     
+#   p_data_tx                integral                8     'b1010110 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1717     
+#   p_data_rx                integral                8     'b1010110 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 85325 ns: uvm_test_top.env.scb [COMPARE_PASSED] @85325 ns: tx_in=1010110   rx_out=1010110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1721     
+#   p_data_tx                integral                8     'b10010110
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1729     
+#   p_data_rx                integral                8     'b10010110
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 86365 ns: uvm_test_top.env.scb [COMPARE_PASSED] @86365 ns: tx_in=10010110   rx_out=10010110
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1733     
+#   p_data_tx                integral                8     'b11110111
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1741     
+#   p_data_rx                integral                8     'b11110111
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 87405 ns: uvm_test_top.env.scb [COMPARE_PASSED] @87405 ns: tx_in=11110111   rx_out=11110111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1745     
+#   p_data_tx                integral                8     'b100111  
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1749     
+#   p_data_rx                integral                8     'b100111  
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 88445 ns: uvm_test_top.env.scb [COMPARE_PASSED] @88445 ns: tx_in=100111   rx_out=100111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1757     
+#   p_data_tx                integral                8     'b110011  
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1765     
+#   p_data_rx                integral                8     'b110011  
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 89565 ns: uvm_test_top.env.scb [COMPARE_PASSED] @89565 ns: tx_in=110011   rx_out=110011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1769     
+#   p_data_tx                integral                8     'b11111100
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1777     
+#   p_data_rx                integral                8     'b11111100
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 90605 ns: uvm_test_top.env.scb [COMPARE_PASSED] @90605 ns: tx_in=11111100   rx_out=11111100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1781     
+#   p_data_tx                integral                8     'b11000011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1785     
+#   p_data_rx                integral                8     'b11000011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 91645 ns: uvm_test_top.env.scb [COMPARE_PASSED] @91645 ns: tx_in=11000011   rx_out=11000011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1793     
+#   p_data_tx                integral                8     'b11100   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1801     
+#   p_data_rx                integral                8     'b11100   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 92765 ns: uvm_test_top.env.scb [COMPARE_PASSED] @92765 ns: tx_in=11100   rx_out=11100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1805     
+#   p_data_tx                integral                8     'b1100011 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1809     
+#   p_data_rx                integral                8     'b1100011 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 93805 ns: uvm_test_top.env.scb [COMPARE_PASSED] @93805 ns: tx_in=1100011   rx_out=1100011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1817     
+#   p_data_tx                integral                8     'b11011010
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1821     
+#   p_data_rx                integral                8     'b11011010
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 94925 ns: uvm_test_top.env.scb [COMPARE_PASSED] @94925 ns: tx_in=11011010   rx_out=11011010
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1829     
+#   p_data_tx                integral                8     'b10101011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1833     
+#   p_data_rx                integral                8     'b10101011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 96045 ns: uvm_test_top.env.scb [COMPARE_PASSED] @96045 ns: tx_in=10101011   rx_out=10101011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1841     
+#   p_data_tx                integral                8     'b10001001
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1845     
+#   p_data_rx                integral                8     'b10001001
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 97165 ns: uvm_test_top.env.scb [COMPARE_PASSED] @97165 ns: tx_in=10001001   rx_out=10001001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1853     
+#   p_data_tx                integral                8     'b1010111 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1861     
+#   p_data_rx                integral                8     'b1010111 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 98285 ns: uvm_test_top.env.scb [COMPARE_PASSED] @98285 ns: tx_in=1010111   rx_out=1010111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1865     
+#   p_data_tx                integral                8     'b10110011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1869     
+#   p_data_rx                integral                8     'b10110011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 99325 ns: uvm_test_top.env.scb [COMPARE_PASSED] @99325 ns: tx_in=10110011   rx_out=10110011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1877     
+#   p_data_tx                integral                8     'b11011011
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1885     
+#   p_data_rx                integral                8     'b11011011
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 100445 ns: uvm_test_top.env.scb [COMPARE_PASSED] @100445 ns: tx_in=11011011   rx_out=11011011
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1889     
+#   p_data_tx                integral                8     'b11010111
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1897     
+#   p_data_rx                integral                8     'b11010111
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 101485 ns: uvm_test_top.env.scb [COMPARE_PASSED] @101485 ns: tx_in=11010111   rx_out=11010111
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1901     
+#   p_data_tx                integral                8     'b100100  
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1909     
+#   p_data_rx                integral                8     'b100100  
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 102525 ns: uvm_test_top.env.scb [COMPARE_PASSED] @102525 ns: tx_in=100100   rx_out=100100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1913     
+#   p_data_tx                integral                8     'b11011101
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1917     
+#   p_data_rx                integral                8     'b11011101
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 103565 ns: uvm_test_top.env.scb [COMPARE_PASSED] @103565 ns: tx_in=11011101   rx_out=11011101
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1925     
+#   p_data_tx                integral                8     'b1001001 
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1933     
+#   p_data_rx                integral                8     'b1001001 
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 104685 ns: uvm_test_top.env.scb [COMPARE_PASSED] @104685 ns: tx_in=1001001   rx_out=1001001
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1937     
+#   p_data_tx                integral                8     'b11100   
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1941     
+#   p_data_rx                integral                8     'b11100   
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 105725 ns: uvm_test_top.env.scb [COMPARE_PASSED] @105725 ns: tx_in=11100   rx_out=11100
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1949     
+#   p_data_tx                integral                8     'b11011000
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b0       
+#   parity_type              integral                1     'b1       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1957     
+#   p_data_rx                integral                8     'b11011000
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 106845 ns: uvm_test_top.env.scb [COMPARE_PASSED] @106845 ns: tx_in=11011000   rx_out=11011000
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# tx_mon_item                tx_sequence_item        -     @1961     
+#   p_data_tx                integral                8     'b11010100
+#   data_valid_tx            integral                1     'b0       
+#   parity_en                integral                1     'b1       
+#   parity_type              integral                1     'b0       
+#   busy_tx                  integral                1     'b1       
+# -------------------------------------------------------------------
+# -------------------------------------------------------------------
+# Name                       Type                    Size  Value     
+# -------------------------------------------------------------------
+# rx_mon_item                rx_sequence_item        -     @1965     
+#   p_data_rx                integral                8     'b11010100
+#   data_valid_rx            integral                1     'b0       
+# -------------------------------------------------------------------
+# UVM_INFO E:/UVM/UART_Protocol/uart/tb//uart_scoreboard.svh(55) @ 107885 ns: uvm_test_top.env.scb [COMPARE_PASSED] @107885 ns: tx_in=11010100   rx_out=11010100
+# UVM_INFO verilog_src/uvm-1.0p1/src/base/uvm_objection.svh(1116) @ 108000 ns: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  103
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [COMPARE_PASSED]   100
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# ** Note: $finish    : D:/questasim_10.0b/win32/../verilog_src/uvm-1.0p1/src/base/uvm_root.svh(392)
+#    Time: 108 us  Iteration: 44  Instance: /uart_top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at D:/questasim_10.0b/win32/../verilog_src/uvm-1.0p1/src/base/uvm_root.svh line 392
