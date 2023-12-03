@@ -1,3 +1,10 @@
+/*###################################################################*\
+##              Module Name:  tx_fsm                                 ##
+##              Project Name: uart_protocl                           ##
+##              Date:   28/11/2023                                   ##
+##              Author: Kholoud Ebrahim Darwseh                      ##
+\*###################################################################*/
+
 module tx_fsm (clk, rst, valid_data, parity_en, ser_done, ser_en, mux_sel, busy);
     input clk, rst;
     input valid_data, parity_en, ser_done;
