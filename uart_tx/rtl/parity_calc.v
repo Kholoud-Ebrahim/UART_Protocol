@@ -1,3 +1,10 @@
+/*###################################################################*\
+##              Module Name:  parity_calc                            ##
+##              Project Name: uart_protocl                           ##
+##              Date:   28/11/2023                                   ##
+##              Author: Kholoud Ebrahim Darwseh                      ##
+\*###################################################################*/
+
 module parity_calc #(parameter DWIDTH = 8)(clk, rst, data, parity_type, parity_bit);
     input clk, rst;
     input [DWIDTH-1:0]data;
