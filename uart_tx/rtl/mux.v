@@ -1,3 +1,10 @@
+/*###################################################################*\
+##              Module Name:  mux                                    ##
+##              Project Name: uart_protocl                           ##
+##              Date:   3/12/2023                                    ##
+##              Author: Kholoud Ebrahim Darwseh                      ##
+\*###################################################################*/
+
 module mux (clk, rst, mux_sel, start_bit, ser_data, parity_bit, stop_bit, tx_out);
     input clk, rst;
     input [2:0] mux_sel;
